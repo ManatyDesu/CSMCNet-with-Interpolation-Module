@@ -160,7 +160,7 @@ def test(**kwargs):
                     #print(interpolated_imgs.shape)  #(1, 128, 10 10)             
                     
                     
-                    #imgs -> measurement(100, M)に変換 (today)
+                    #imgs -> measurement(100, M)に変換
                     #1. interpolated_imgs(1, 128, 10, 10) -> (1, 128, 100)
                     trans_interpolated_imgs = interpolated_imgs.view((1,int(opt.blk_size*opt.blk_size*opt.cr),int(interpolated_imgs.size(2)*interpolated_imgs.size(2))))
                     interpolated_m = t.zeros((int(interpolated_imgs.size(2)*interpolated_imgs.size(2)), int(opt.blk_size*opt.blk_size*opt.cr))).to(opt.device)
